@@ -1,0 +1,48 @@
+{
+  "name": "my-web-components",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"node scripts/css-transpiler.js\"",
+    "build": "node scripts/css-transpiler.js --build && tsc && vite build",
+    "preview": "vite preview",
+    "storybook": "concurrently \"node scripts/css-transpiler.js\" \"storybook dev -p 6006\"",
+    "build-storybook": "node scripts/css-transpiler.js --build && storybook build",
+    "watch-css": "node scripts/css-transpiler.js",
+    "build-css": "node scripts/css-transpiler.js --build",
+    "create-component": "node scripts/create-component.js",
+    "bundle": "rollup -c rollup.config.js"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@storybook/addon-essentials": "^8.6.6",
+    "@storybook/blocks": "^8.6.6",
+    "@storybook/experimental-addon-test": "^8.6.6",
+    "@storybook/test": "^8.6.6",
+    "@storybook/web-components": "^8.6.6",
+    "@storybook/web-components-vite": "^8.6.6",
+    "@tailwindcss/postcss": "^4.0.14",
+    "autoprefixer": "^10.4.21",
+    "chokidar": "^4.0.3",
+    "concurrently": "^9.1.2",
+    "esbuild": "^0.25.1",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
+    "postcss-nested": "^7.0.2",
+    "rollup": "^4.35.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^8.6.6",
+    "tailwindcss": "^4.0.14",
+    "typescript": "~5.7.2",
+    "vite": "^6.2.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.0.14",
+    "@tailwindcss/vite": "^4.0.14",
+    "lit": "^3.2.1"
+  }
+}
