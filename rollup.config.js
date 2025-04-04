@@ -27,10 +27,10 @@ const indexContent = componentFiles
 if (!fs.existsSync('src')) {
 	fs.mkdirSync('src');
 }
-fs.writeFileSync('src/index.ts', indexContent);
+fs.writeFileSync('src/main.ts', indexContent);
 
 export default {
-	input: 'src/index.ts',
+	input: 'src/main.ts',
 	output: [
 		{
 			file: 'dist/bundle.js',

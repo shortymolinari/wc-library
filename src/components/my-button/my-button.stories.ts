@@ -20,6 +20,6 @@ export const Primary: Story = {
   args: {
     // Define tus args aquí
   },
-  render: (args) => `<my-button>Content goes here</my-button>
+  render: () => `<my-button>Content goes here</my-button>
   `,
 };

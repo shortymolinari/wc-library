@@ -4,9 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import postcss from 'postcss';
 import tailwindcss from 'tailwindcss';
-import autoprefixer from 'autoprefixer';
-import postcssImport from 'postcss-import';
-import postcssNested from 'postcss-nested';
+import discardComments from 'postcss-discard-comments';
 
 // Obtener el directorio actual en entorno de módulos ES
 const __filename = fileURLToPath(import.meta.url);
@@ -17,10 +15,8 @@ const componentsDir = path.resolve(__dirname, '../src/components');
 
 // Configuración de PostCSS
 const postcssProcessor = postcss([
-	postcssImport,
 	tailwindcss(), // Ahora usando el plugin estándar
-	postcssNested,
-	autoprefixer
+	discardComments(),
   ]);
 
 // Función para transformar CSS a Lit CSS
