@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import postcss from 'postcss';
-import tailwindcssPostcss from '@tailwindcss/postcss';
+import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import postcssImport from 'postcss-import';
 import postcssNested from 'postcss-nested';
@@ -18,10 +18,10 @@ const componentsDir = path.resolve(__dirname, '../src/components');
 // Configuración de PostCSS
 const postcssProcessor = postcss([
 	postcssImport,
-	tailwindcssPostcss,
+	tailwindcss(), // Ahora usando el plugin estándar
 	postcssNested,
 	autoprefixer
-]);
+  ]);
 
 // Función para transformar CSS a Lit CSS
 function transformCssToLitCss(css, outputPath) {
